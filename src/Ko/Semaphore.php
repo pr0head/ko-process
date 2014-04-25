@@ -41,10 +41,6 @@ class Semaphore
             $this->release();
         }
 
-        if (is_resource($this->mutex)) {
-            shm_remove($this->mutex);
-        }
-
         if (file_exists($this->file)) {
             unlink($this->file);
         }
